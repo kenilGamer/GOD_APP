@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>#035 - Profile Card Design</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.0/css/all.min.css'>
+    <link rel="stylesheet" href="/stylesheets/profile.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" rel="stylesheet">  
+
+    <link rel="stylesheet" href="StyleCards.css"/>
+</head>
+<body>
+
+<div class="card-container">
+    
+    <span class="pro">PRO</span>
+    <img src="/images/profile.jpg" alt="user"/>
+    <h3><%= user.username %></h3>
+    <h6>@<%= user.fullname %></h6>
+    <p>User interface designer and <br/> front-end developer</p>
+    <div class="buttons">
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <input type="text" name="filecaption" placeholder="some caption">
+            <input type="file" name="file">
+        <button class="primary ghost" type="submit">Upload</button>
+        
+
+        </form>
+       
+        <!-- <button class="primary">Message</button> -->
+
+    </div>
+    <div class="skills">
+        <h6>Skills</h6>
+        <ul>
+            <!-- <input type="text" name="lick"> -->
+            <li>UI / UX</li>
+            <li>Front End Development</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>React</li>
+            <li>Node</li>
+        </ul>
+    </div>
+</div>
+<a href="/logout" style="text-decoration: none; color: antiquewhite;" class="primary">
+    LogOut
+</a>
+
+<div id="page2" >
+    
+    <% user.posts.forEach(function(post){%>
+        <div class="card" style="width: 18rem;">
+            <img class="img" src="/images/uploads/<%= post.image %>" alt="">
+        </div>
+        <!-- <div class="primary ghost card">
+            <h5><%= post.imageText %></h5>
+        </div> -->
+    <%})%>
+</div>
+</body>
+</html>
