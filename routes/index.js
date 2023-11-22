@@ -6,11 +6,11 @@ const passport = require('passport');
 const localStrategy = require("passport-local")
 const upload = require('./multer')
 router.get('/login/google', passport.authenticate('google'));
-// app.get('/oauth2/redirect/google',
-//   passport.authenticate('google', { failureRedirect: '/login', failureMessage: true }),
-//   function(req, res) {
-//     res.redirect('/');
-//   });
+router.get('/oauth2/redirect/google',
+  passport.authenticate('google', { failureRedirect: '/login', failureMessage: true }),
+  function(req, res) {
+    res.redirect('/');
+  });
 passport.use(new localStrategy(userModel.authenticate()));
 /* GET home page. */
 router.get('/', function(req, res, next) {
