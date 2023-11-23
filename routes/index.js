@@ -35,7 +35,7 @@ user.posts.push(post._id)
   res.send('done')
 });
 router.get('/login', function(req, res, next) {
-  res.render('login',{error: req.flash('error')});
+  res.render('new',{error: req.flash('error')});
 });
 router.get('/feed', function(req, res, next) {
   res.render('feed');

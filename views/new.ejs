@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/new.css ">
+</head>
+<body>
+    <div class="container">
+        <div class="drop">
+            <div class="content">
+                <h2 class="animate_hearBeat">login form</h2>
+                <% if(error.length > 0) {%>
+                    <p  style="color: red;"><%= error %></p>
+                    <% } %>
+                <form action="/login" method="post">
+                    <div class="input-box">
+                        <input type="text" name="username" placeholder="Username">
+                    </div>
+                    <div class="input-box">
+                        <input type="password" name="password" placeholder="PassWord">
+                    </div>
+                    <div class="input-box">
+                        <input type="submit" value="login" href="#" >
+                    </div>
+                </form>
+            </div>
+        </div>
+        <a href="/forgot" class='btn'>forgot password</a>
+        <a href="/signup" class='btn signup'>signup</a>
+
+    </div>
+</body>
+</html>
