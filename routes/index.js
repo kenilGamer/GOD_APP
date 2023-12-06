@@ -1,3 +1,4 @@
+// @ts-nocheck
 var express = require('express');
 var router = express.Router();
 const userModel = require("./users")
@@ -7,6 +8,7 @@ const localStrategy = require("passport-local")
 const upload = require('./multer')
 router.get('/login/google', passport.authenticate('google'));
 router.get('/oauth2/redirect/google',
+  // @ts-ignore
   passport.authenticate('google', { failureRedirect: '/login', failureMessage: true }),
   function(req, res) {
     res.redirect('/');
