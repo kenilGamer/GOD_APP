@@ -18,17 +18,16 @@ passport.use(new localStrategy(userModel.authenticate()));
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
-router.get('/posts', function(req, res, next) {
-  res.render('posts');
-});
+
 router.post('/upload',upload.single('file'),isLoggedIn, async function(req, res, next) {
   if (!req.file){
     return res.status(400).send('no files were uploaded')
   }
   const user = await userModel.findOne({username: req.session.passport.user})
 const post = await  postModel.create({
-    image: req.file.filename,
+    image: req.file.filename, 
     imageText: req.body.filecaption,
+    imagetitle: req.body.title,
     user: user._id
   })
 

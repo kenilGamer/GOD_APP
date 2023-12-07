@@ -123,17 +123,47 @@ button.primary.ghost {
 	flex-direction: row;
 }
 
-.card img{
-	position: relative;
+.card{
+	/* position: relative; */
+	margin: 20px 20px;
+	padding: 20px;
 	width: 200px;
+	height: 300px;
 	padding: 2px;
 	border: 2px solid #11cff1;
 	display: flex;
 	justify-content: center;
-	align-items: center;
+	/* align-items: center; */
+	flex-wrap: nowrap;
 }
-h5{
-	margin-bottom: 1px;
+.card img{
+	margin: 50px 0;
+	position: absolute;
+	object-fit: cover;
+	width: 200px;
+	height: fit-content;
+}
+.card h5{
+	margin-top: 200px;
+	/* position: absolute; */
+	z-index: 1;
+	text-align: center;
+	background-color: #11cff1;
+	border: 1px solid #11cff1;
+	border-radius: 3px;
+	color: #fff;
+	font-family: Montserrat, sans-serif;
+	font-weight: 500;
+	padding: 10px 0px;
+}
+.card h5{
+	/* position: absolute; */
+	background-color: transparent;
+	color: #11cff1;
+	/* font-size: larger; */
+}
+.card h1{
+	margin-top: 0px;
 	position: absolute;
 	z-index: 1;
 	text-align: center;
@@ -145,8 +175,8 @@ h5{
 	font-weight: 500;
 	padding: 10px 0px;
 }
-h5{
-	position: absolute;
+.card h1{
+	/* position: absolute; */
 	background-color: transparent;
 	color: #11cff1;
 	font-size: larger;

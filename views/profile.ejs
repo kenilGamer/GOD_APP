@@ -23,6 +23,7 @@
     <p>User interface designer and <br/> front-end developer</p>
     <div class="buttons">
         <form action="/upload" method="post" enctype="multipart/form-data">
+            <input type="text" name="title" placeholder="title">
             <input type="text" name="filecaption" placeholder="some caption">
             <input type="file" name="file">
         <button class="primary ghost" type="submit">Upload</button>
@@ -54,12 +55,12 @@
 <div id="page2" >
     
     <% user.posts.forEach(function(post){%>
-        <div class="card" style="width: 18rem;">
+        <div class="card">
+            <h1><%= post.imagetitle %></h1>
             <img class="img" src="/images/uploads/<%= post.image %>" alt="">
-        </div>
-        <!-- <div class="primary ghost card">
             <h5><%= post.imageText %></h5>
-        </div> -->
+        </div>
+           
     <%})%>
 </div>
 </body>
